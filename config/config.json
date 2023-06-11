@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "recipe_app",
-    "host": "127.0.0.1",
+    "username": "freedb_Muhammadxoja2005",
+    "password": "t26T9nmK@XAT@Uj",
+    "database": "freedb_aliftech",
+    "host": "sql.freedb.tech",
     "dialect": "mysql"
   },
   "test": {
