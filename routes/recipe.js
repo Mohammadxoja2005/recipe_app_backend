@@ -18,6 +18,23 @@ router.get("/:id", async (req, res) => {
     res.json(getOneRecipe);
 });
 
+router.put("/edit/:id", async (req, res) => {
+    const { name, description, ingredients, cook_time } = req.body;
+    const { img } = req.files;
+    const { id } = req.params;
+
+    let filename = uuid.v4() + ".jpg";
+
+    const response = await recipe.update(
+        { img: filename, name, description, ingredients, cook_time },
+        { where: { id: id } }
+    )
+
+    img.mv(path.resolve(__dirname, "..", "static", filename));
+
+    res.json(response)
+})
+
 
 router.post("/create", async (req, res) => {
     const { name, description, ingredients, cook_time } = req.body;
