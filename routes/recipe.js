@@ -4,6 +4,21 @@ const router = express.Router();
 const path = require("path");
 const { recipe } = require("../models");
 
+router.get("/", async (req, res) => {
+    const getAllRecipes = await recipe.findAll();
+
+    res.json(getAllRecipes);
+});
+
+router.get("/:id", async (req, res) => {
+    const { id } = req.params;
+
+    const getOneRecipe = await recipe.findAll({ where: { id: id } });
+
+    res.json(getOneRecipe);
+});
+
+
 router.post("/create", async (req, res) => {
     const { name, description, ingredients, cook_time } = req.body;
     const { img } = req.files;
