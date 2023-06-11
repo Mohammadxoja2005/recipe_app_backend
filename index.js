@@ -6,6 +6,7 @@ const fileUpload = require("express-fileupload");
 const path = require("path");
 
 const recipeRouter = require("./routes/recipe");
+const commentRouter = require("./routes/comments");
 
 app.use(cors());
 app.use(express.json());
@@ -14,6 +15,7 @@ app.use(fileUpload({}));
 
 // routes
 app.use("/recipe", recipeRouter);
+app.use("/comment", commentRouter);
 
 db.sequelize
     .sync()
