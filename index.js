@@ -5,10 +5,15 @@ const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const path = require("path");
 
+const recipeRouter = require("./routes/recipe");
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "static")));
 app.use(fileUpload({}));
+
+// routes
+app.use("/recipe", recipeRouter);
 
 db.sequelize
     .sync()
