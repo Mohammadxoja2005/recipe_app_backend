@@ -4,7 +4,7 @@
     "password": "t26T9nmK@XAT@Uj",
     "database": "freedb_aliftech",
     "host": "sql.freedb.tech",
-    "dialect": "mysql"
+    "dialect": "mysql" 
   },
   "test": {
     "username": "root",
