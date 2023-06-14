@@ -42,18 +42,18 @@ router.put("/edit/:id", async (req, res) => {
 
 
 router.post("/create", async (req, res) => {
-    const { name, description, ingredients, cook_time } = req.body;
-    const { img } = req.files;
+    const { name, description, ingredients, cook_time, img } = req.body;
+    // const { img } = req.files;
 
-    let filename = uuid.v4() + ".jpg";
+    // let filename = uuid.v4() + ".jpg";
 
-    const response = await recipe.create({ img: filename, name, description, ingredients, cook_time })
+    // img.mv(path.resolve(__dirname, "..", "static", filename)); 
 
-    img.mv(path.resolve(__dirname, "..", "static", filename));
+    const response = await recipe.create({ img, name, description, ingredients, cook_time })
 
     res.json(response)
 
-}) 
+})
 
 
 // router.post('/create', async (req, res) => {

@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "freedb_Muhammadxoja2005",
-    "password": "t26T9nmK@XAT@Uj",
-    "database": "freedb_aliftech",
-    "host": "sql.freedb.tech",
+    "username": "oliynema_backend_nodejs",
+    "password": "Muha2005",
+    "database": "oliynema_backend",
+    "host": "82.215.106.72",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "freedb_Muhammadxoja2005",
-    "password": "t26T9nmK@XAT@Uj",
-    "database": "freedb_aliftech",
-    "host": "sql.freedb.tech",
+    "username": "oliynema_backend_nodejs",
+    "password": "Muha2005",
+    "database": "oliynema_backend",
+    "host": "82.215.106.72",
     "dialect": "mysql"
   }
 }

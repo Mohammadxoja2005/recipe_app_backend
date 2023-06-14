@@ -18,6 +18,8 @@
     "sequelize": "^6.32.0",
     "sequelize-cli": "^6.6.1",
     "sharp": "^0.32.1",
+    "short-url": "^0.0.1",
+    "shorturl": "^0.0.3",
     "uuid": "^9.0.0"
   }
 }
