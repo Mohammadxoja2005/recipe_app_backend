@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "oliynema_backend_nodejs",
-    "password": "Muha2005",
+    "username": "oliynema_test",
+    "password": "$_^@qKZniv,S",
     "database": "oliynema_backend",
-    "host": "82.215.106.72",
+    "host": "162.55.134.175",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "oliynema_backend_nodejs",
-    "password": "Muha2005",
+    "username": "oliynema_test",
+    "password": "$_^@qKZniv,S",
     "database": "oliynema_backend",
-    "host": "82.215.106.72",
+    "host": "162.55.134.175",
     "dialect": "mysql"
   }
 }
