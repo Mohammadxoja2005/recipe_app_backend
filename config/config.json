@@ -4,7 +4,13 @@
     "password": "$_^@qKZniv,S",
     "database": "oliynema_backend",
     "host": "162.55.134.175",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   },
   "test": {
     "username": "root",
@@ -18,6 +24,12 @@
     "password": "$_^@qKZniv,S",
     "database": "oliynema_backend",
     "host": "162.55.134.175",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   }
 }
