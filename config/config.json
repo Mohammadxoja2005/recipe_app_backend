@@ -11,15 +11,13 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "dialectModule": "mysql2"
+    "dialect": "mysql"
   },
   "production": {
     "username": "freedb_Muhammadxoja2005",
     "password": "t26T9nmK@XAT@Uj",
     "database": "freedb_aliftech",
     "host": "sql.freedb.tech",
-    "dialect": "mysql",
-    "dialectModule": "mysql2"
+    "dialect": "mysql"
   }
 }
