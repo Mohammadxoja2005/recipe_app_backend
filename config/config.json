@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "oliynema_test",
-    "password": "$_^@qKZniv,S",
-    "database": "oliynema_backend",
-    "host": "162.55.134.175",
+    "username": "freedb_Muhammadxoja2005",
+    "password": "t26T9nmK@XAT@Uj",
+    "database": "freedb_aliftech",
+    "host": "sql.freedb.tech",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "oliynema_test",
-    "password": "$_^@qKZniv,S",
-    "database": "oliynema_backend",
-    "host": "162.55.134.175",
+    "username": "freedb_Muhammadxoja2005",
+    "password": "t26T9nmK@XAT@Uj",
+    "database": "freedb_aliftech",
+    "host": "sql.freedb.tech",
     "dialect": "mysql"
   }
 }
