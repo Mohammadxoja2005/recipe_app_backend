@@ -20,7 +20,7 @@ app.use("/comment", commentRouter);
 db.sequelize
     .sync()
     .then(() => {
-        app.listen(process.env.PORT || 4000, () => {
+        app.listen(process.env.PORT || 3002, () => {
             console.log("server started...");
         });
     })
