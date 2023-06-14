@@ -52,7 +52,6 @@ router.post("/create", async (req, res) => {
     const response = await recipe.create({ img, name, description, ingredients, cook_time })
 
     res.json(response)
-
 })
 
 
