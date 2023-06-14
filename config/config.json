@@ -20,6 +20,6 @@
     "database": "freedb_aliftech",
     "host": "sql.freedb.tech",
     "dialect": "mysql",
-    "dialectModule": "mysql2"
+    "dialectModule": "mssql"
   }
 }
