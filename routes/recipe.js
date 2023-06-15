@@ -27,18 +27,17 @@ router.get("/:id", async (req, res) => {
 });
 
 router.put("/edit/:id", async (req, res) => {
-    const { name, description, ingredients, cook_time } = req.body;
-    const { img } = req.files;
+    const { name, description, ingredients, cook_time, img } = req.body;
     const { id } = req.params;
 
-    let filename = uuid.v4() + ".jpg";
+    // let filename = uuid.v4() + ".jpg";
 
     const response = await recipe.update(
-        { img: filename, name, description, ingredients, cook_time },
+        { img: img, name, description, ingredients, cook_time },
         { where: { id: id } }
     )
 
-    img.mv(path.resolve(__dirname, "..", "static", filename));
+    // img.mv(path.resolve(__dirname, "..", "static", filename));
 
     res.json(response)
 })
