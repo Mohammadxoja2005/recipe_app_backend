@@ -31,8 +31,8 @@ router.put("/edit/:id", async (req, res) => {
     const { id } = req.params;
 
     // let filename = uuid.v4() + ".jpg";
-    // img.mv(path.resolve(__dirname, "..", "static", filename));
 
+    // img.mv(path.resolve(__dirname, "..", "static", filename));
     const response = await recipe.update(
         { img: img, name, description, ingredients, cook_time },
         { where: { id: id } }
@@ -51,6 +51,14 @@ router.post("/create", async (req, res) => {
     // img.mv(path.resolve(__dirname, "..", "static", filename)); 
 
     const response = await recipe.create({ img, name, description, ingredients, cook_time })
+
+    res.json(response)
+})
+
+router.delete("/delete/:id", async (req, res) => {
+    const { id } = req.params
+
+    const response = await recipe.delete({ where: { id: id } })
 
     res.json(response)
 })
