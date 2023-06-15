@@ -31,13 +31,12 @@ router.put("/edit/:id", async (req, res) => {
     const { id } = req.params;
 
     // let filename = uuid.v4() + ".jpg";
+    // img.mv(path.resolve(__dirname, "..", "static", filename));
 
     const response = await recipe.update(
         { img: img, name, description, ingredients, cook_time },
         { where: { id: id } }
     )
-
-    // img.mv(path.resolve(__dirname, "..", "static", filename));
 
     res.json(response)
 })
