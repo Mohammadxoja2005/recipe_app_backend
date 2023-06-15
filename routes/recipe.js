@@ -17,8 +17,11 @@ router.get("/:id", async (req, res) => {
     const getOneRecipe = await recipe.findAll({
         where: { id: id },
         include: comment
-    }
-    );
+    });
+
+    getOneRecipe.forEach((recipe) => {
+        recipe.ingredients = recipe.ingredients.split(',').map((ingredient) => ingredient.trim())
+    })
 
     res.json(getOneRecipe);
 });
