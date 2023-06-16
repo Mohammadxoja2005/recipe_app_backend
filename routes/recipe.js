@@ -104,7 +104,6 @@ router.post("/create", async (req, res) => {
 router.delete("/delete/:id", async (req, res) => {
     const { id } = req.params
     console.log(id);
-
     const response = await recipe.destroy({ where: { id: id } })
 
     res.json(response)
