@@ -6,7 +6,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
     const response = await comment.findAll({ where: { recipe_id: id } })
-
+    
     res.json(response);
 })
 

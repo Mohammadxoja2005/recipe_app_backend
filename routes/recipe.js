@@ -5,10 +5,14 @@ const sharp = require('sharp');
 const path = require("path");
 const { recipe, comment } = require("../models");
 
-router.get("/", async (req, res) => {
+router.get("/:sort_order", async (req, res) => {
     const getAllRecipes = await recipe.findAll();
+    const { sort_order } = req.params;
 
-    res.json(getAllRecipes);
+    switch (sort_order) {
+        case "increase": res.json(getAllRecipes); break;
+        case "decrease": res.json(getAllRecipes.reverse()); break;
+    }
 });
 
 router.get("/:id", async (req, res) => {
@@ -57,7 +61,7 @@ router.post("/create", async (req, res) => {
 
 router.delete("/delete/:id", async (req, res) => {
     const { id } = req.params
-    console.log(id); 
+    console.log(id);
 
     const response = await recipe.destroy({ where: { id: id } })
 
