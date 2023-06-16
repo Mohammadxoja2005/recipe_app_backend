@@ -5,7 +5,7 @@ const sharp = require('sharp');
 const path = require("path");
 const { recipe, comment } = require("../models");
 
-router.get("/:sort_order", async (req, res) => {
+router.get("/sort/:sort_order", async (req, res) => {
     const getAllRecipes = await recipe.findAll();
     const { sort_order } = req.params;
 
@@ -13,6 +13,8 @@ router.get("/:sort_order", async (req, res) => {
         case "increase": res.json(getAllRecipes); break;
         case "decrease": res.json(getAllRecipes.reverse()); break;
     }
+
+    // res.json(getAllRecipes);
 });
 
 router.get("/:id", async (req, res) => {
