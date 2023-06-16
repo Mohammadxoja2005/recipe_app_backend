@@ -1,6 +1,7 @@
 const uuid = require("uuid");
 const express = require("express");
 const router = express.Router();
+const { Op } = require('sequelize');
 const sharp = require('sharp');
 const path = require("path");
 const { recipe, comment } = require("../models");
@@ -16,6 +17,45 @@ router.get("/sort/:sort_order", async (req, res) => {
 
     // res.json(getAllRecipes);
 });
+
+router.get("/search", async (req, res) => {
+    const { q, order } = req.query;
+
+    let whereClause = {};
+
+    // if (q == 'all') {
+    //     const recipes = await recipe.findAll();
+
+    //     switch (order) {
+    //         case "increase": res.json(recipes); break;
+    //         case "decrease": res.json(recipes.reverse()); break;
+    //     }
+
+    //     return;
+    // }
+
+    if (q) {
+        whereClause = {
+            name: {
+                [Op.like]: `%${q}%`,
+            },
+        };
+    }
+
+    try {
+        const recipes = await recipe.findAll({
+            where: whereClause,
+        });
+
+        switch (order) {
+            case "increase": res.json(recipes); break;
+            case "decrease": res.json(recipes.reverse()); break;
+        }
+
+    } catch (error) {
+        res.status(500).json({ error: 'An error occurred' });
+    }
+})
 
 router.get("/:id", async (req, res) => {
     const { id } = req.params;
@@ -69,6 +109,7 @@ router.delete("/delete/:id", async (req, res) => {
 
     res.json(response)
 })
+
 
 
 // router.post('/create', async (req, res) => {
